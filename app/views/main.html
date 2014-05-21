@@ -1,23 +1,24 @@
 <div class="header">
     <ul class="nav nav-pills pull-right">
         <li class="active"><a ng-href="#">Home</a></li>
-        <li><a ng-href="#/addproject">Add Project</a></li>
+        <li><a ng-href="#/addtrash">Add Trash</a></li>
         <li><a ng-href="#/about">About Us</a></li>
         <li><a ng-href="#/login" ng-hide="view=='login'">Login</a></li>
         <li><a ng-href="#/register" ng-hide="view=='login'">Register</a></li>
         <li><a ng-click="logout()" ng-show="view=='login'">Logout</a></li>
     </ul>
-    <h3 class="text-muted">Do Good Project</h3>
+    <h3 class="text-muted">FlyingTrash</h3>
 </div>
 
         <div ng-repeat="contact in contacts">
             <div style="outline:#000000 solid 2px;">
                 
-                    <a href="/#/project-info/{{contact.objectId}}"><h1>&nbsp;{{contact.projectName}}</h1></a>
-                    <h2>&nbsp;By : {{contact.user}}</h2>
-                    <h3>&nbsp;{{contact.where}}</h3>
+                    <a href="/#/project-info/{{contact.objectId}}"><h1>&nbsp;{{contact.trashName}}</h1></a>
+                    <h2>&nbsp;By {{contact.user}}</h2>
+                    <h3>&nbsp;At {{contact.where}}</h3>
                     <p><b>&nbsp;&nbsp;{{contact.detail}}</b></p>
-                    <p>&nbsp;&nbsp;{{getDate(contact.when)}}</p>        
+                    <p>&nbsp;&nbsp;Date Found {{getDate(contact.when)}}</p>
+                    <center><img src="{{contact.imageURL}}"></center>
 
             </div>
         </div>

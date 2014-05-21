@@ -9,12 +9,13 @@
     </ul>
     <h3 class="text-muted">Do Good Project</h3>
 </div>
-<h1>&nbsp;{{detail.projectName}}</h1>
-<h2>&nbsp;By : {{detail.user}}</h2>
+<h1>&nbsp;{{detail.trashName}}</h1>
+<h2>&nbsp;By {{detail.user}}</h2>
 <hr>
-<h3>&nbsp;{{detail.where}}</h3>
+<h3>&nbsp;At {{detail.where}}</h3>
 <p><b>&nbsp;&nbsp;{{detail.detail}}</b></p>
-<p>&nbsp;&nbsp;{{getDate(detail.when)}}</p>   
+<p>&nbsp;&nbsp;{{getDate(detail.when)}}</p>
+<center><img src="{{detail.imageURL}}"></center>
 <hr>
 <p></p>
 <input type="text" ng-model="comment" class="form-control" placeholder="Comments" style="width:70%;display:inline-block" ng-show="view=='login'">

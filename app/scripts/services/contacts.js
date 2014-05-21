@@ -2,8 +2,8 @@
 
 angular.module('firstNgAppApp')
 .factory('Contacts', ['$http', function($http) {
-	var appId	= 'awsRoC0mgoBokhrwDEd7O9tHJoY9fpDTjDoMWYIQ';
-	var apiKey	= 'u0lb7443cosZ7GNjtBnVNAKfCg7GCiAVjlNXgG2S';
+	var appId	= 'Aq9NsQtEM04e5LrD8AUgBlZ2HCW4PjsJTaVwrspX';
+	var apiKey	= 'pDwRhIOnG0HfRrQaOjPeyH91N3PTZEVyIiRdNwGZ';
 
 	return {
 		addProject : function(data,user,callback){
@@ -19,9 +19,10 @@ angular.module('firstNgAppApp')
 					'Content-Type': 'application/json'
 				},
 				data: {
-					projectName:data.projectName,
+					trashName:data.trashName,
 					where:data.where,
 					detail:data.detail,
+					imageURL:data.imageURL,
 					user:user,
 					when:{'__type': 'Date',
 					'iso': data.when}
