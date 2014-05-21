@@ -26,6 +26,11 @@ angular.module('firstNgAppApp')
 			console.log(date);
 			return date.toDateString();
 		};
+		$scope.getDateTime=function(object){
+			var date=new Date(object);
+			console.log(date);
+			return date.toDateString()+" "+date.toTimeString();
+		};
 		$scope.logout = function(){
 			$rootScope.sessionId=null;
 			$rootScope.username=null;
