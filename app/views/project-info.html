@@ -1,0 +1,52 @@
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li  class="active"><a ng-href="#">Home</a></li>
+        <li><a ng-href="#/addproject">Add Project</a></li>
+        <li><a ng-href="#/about">About Us</a></li>
+        <li><a ng-href="#/login" ng-hide="view=='login'">Login</a></li>
+        <li><a ng-href="#/register" ng-hide="view=='login'">Register</a></li>
+        <li><a ng-click="logout()" ng-show="view=='login'">Logout</a></li>
+    </ul>
+    <h3 class="text-muted">Do Good Project</h3>
+</div>
+<h1>&nbsp;{{detail.projectName}}</h1>
+<h2>&nbsp;By : {{detail.user}}</h2>
+<hr>
+<h3>&nbsp;{{detail.where}}</h3>
+<p><b>&nbsp;&nbsp;{{detail.detail}}</b></p>
+<p>&nbsp;&nbsp;{{getDate(detail.when)}}</p>   
+<hr>
+<p></p>
+<input type="text" ng-model="comment" class="form-control" placeholder="Comments" style="width:70%;display:inline-block" ng-show="view=='login'">
+<button type="button" class="btn btn-primary" style="display:inline-block;width:14%" ng-click="add(comment,detail.objectId)" ng-show="view=='login'">Submit</button>
+<button type="button" class="btn btn-danger" style="display:inline-block;width:14%" ng-click="join(detail.objectId)" ng-show="view=='login'">Join</button>
+<p></p>
+<hr ng-show="view=='login'">
+<p></p>
+
+<h4>&nbsp;&nbsp;These People Will Join</h4>
+<hr>
+<div ng-repeat"user in joinlist">
+<div>
+
+</div>
+{{user.project}}
+</div>
+<hr>
+<p></p>
+<h4>&nbsp;&nbsp;All Comment</h4>
+<p></p>
+
+<div ng-repeat="comment in comments">
+<div style="outline:#000000 solid 1px;width:90%;height:50px;">
+<div>
+<p>{{comment.comment}}</p>
+<p>Post By : {{comment.user}}</p>
+</div>
+</div>
+<p></p>
+</div>
+
+<div class="footer">
+    <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+</div>

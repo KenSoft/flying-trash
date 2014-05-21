@@ -1,0 +1,67 @@
+<div class="header">
+    <ul class="nav nav-pills pull-right">
+        <li><a ng-href="#">Home</a></li>
+        <li class="active"><a ng-href="#/addproject">Add Project</a></li>
+        <li><a ng-href="#/about">About Us</a></li>
+        <li ng-hide="view=='login'"><a ng-href="#/login">Login</a></li>
+        <li ng-hide="view=='login'"><a ng-href="#/register">Register</a></li>
+        <li><a ng-click="logout()" ng-show="view=='login'">Logout</a></li>
+    </ul>
+    <h3 class="text-muted">Do Good Project</h3>
+</div>
+
+<div class="row marketing">
+
+
+    <br>
+    <br>
+
+    <form class="form-horizontal" role="form" ng-init="input={}" ng-submit="add(input)">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Project Name</label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="input.projectName" class="form-control" placeholder="Project Name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Where</label>
+            <div class="col-sm-10">
+                <input type="text" ng-model="input.where" class="form-control" placeholder="Where">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">Detail</label>
+            <div class="col-sm-10">
+                <textarea ng-model="input.detail" class="form-control" rows="5"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">When</label>
+            <div class="col-sm-10">
+                <div style="display:inline-block; min-height:290px;">
+                    <datepicker ng-model="input.when" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10 ">
+                <button type="submit" class="btn btn-info" ng-show="view=='login'">Add</button>
+                <div ng-hide="view=='login'">Login to Post</div>
+            </div>
+        </div>
+
+
+    </form>
+
+
+
+</div>
+
+<div class="footer">
+    <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+</div>
