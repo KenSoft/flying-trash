@@ -1,13 +1,13 @@
 <div class="header">
     <ul class="nav nav-pills pull-right">
-        <li  class="active"><a ng-href="#">Home</a></li>
-        <li><a ng-href="#/addproject">Add Project</a></li>
+        <li class="active"><a ng-href="#">Home</a></li>
+        <li><a ng-href="#/addtrash">Add Trash</a></li>
         <li><a ng-href="#/about">About Us</a></li>
         <li><a ng-href="#/login" ng-hide="view=='login'">Login</a></li>
         <li><a ng-href="#/register" ng-hide="view=='login'">Register</a></li>
         <li><a ng-click="logout()" ng-show="view=='login'">Logout</a></li>
     </ul>
-    <h3 class="text-muted">Do Good Project</h3>
+    <h3 class="text-muted">FlyingTrash</h3>
 </div>
 <h1>&nbsp;{{detail.trashName}}</h1>
 <h2>&nbsp;By {{detail.user}}</h2>
@@ -20,18 +20,15 @@
 <p></p>
 <input type="text" ng-model="comment" class="form-control" placeholder="Comments" style="width:70%;display:inline-block" ng-show="view=='login'">
 <button type="button" class="btn btn-primary" style="display:inline-block;width:14%" ng-click="add(comment,detail.objectId)" ng-show="view=='login'">Submit</button>
-<button type="button" class="btn btn-danger" style="display:inline-block;width:14%" ng-click="join(detail.objectId)" ng-show="view=='login'">Join</button>
+<button type="button" class="btn btn-danger" style="display:inline-block;width:14%" ng-click="join(detail.objectId)" ng-show="view=='login'">Clear</button>
 <p></p>
 <hr ng-show="view=='login'">
 <p></p>
 
-<h4>&nbsp;&nbsp;These People Will Join</h4>
+<h4>&nbsp;&nbsp;Cleared By</h4>
 <hr>
-<div ng-repeat"user in joinlist">
-<div>
-
-</div>
-{{user.project}}
+<div ng-repeat="user in joinlist">
+{{user.user}}
 </div>
 <hr>
 <p></p>

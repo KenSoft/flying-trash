@@ -29,6 +29,11 @@ angular.module('firstNgAppApp')
 		console.log(date);
 		return date.toDateString();
 	};
+	$scope.getDateTime=function(object){
+		var date=new Date(object);
+		console.log(date);
+		return date.toDateString()+" "+date.toTimeString();
+	};
 	$scope.add = function(comment,project){
 		console.log('working');
 		Contacts.addComment(comment,project,function(data){
